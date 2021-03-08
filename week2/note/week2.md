@@ -73,3 +73,57 @@ H： Hessian
 
 ## lecture2-2 batch and momentum（动量）
 
+
+
+### batch
+
+![image-20210308084332272](images/image-20210308084332272.png)
+
+shuffle：打乱数据集，每epoch分的batch中的数据不一样
+
+batch_size=n：每看n个数据，参数就update一次；
+
+==更小的batch_size性能更好；因为大的batch_size会optimization fails==
+
+
+
+![image-20210308085820435](images/image-20210308085820435.png)
+
+
+
+Full Batch：gradient=0，就卡住了
+
+small batch：gradient=0，换下一个epoch，此时不一定卡住，会继续计算
+
+
+
+最终对比：
+
+![image-20210308090610851](images/image-20210308090610851.png)
+
+
+
+### momentum
+
+![image-20210308090835275](images/image-20210308090835275.png)
+
+动量一定大的时候，球不一定会停在鞍点或者局部最低点
+
+
+
+计算方式：
+
+![image-20210308091427402](images/image-20210308091427402.png)
+
+朝gradient的反方向运动
+
+
+
+![image-20210308091602683](images/image-20210308091602683.png)
+
+
+
+![image-20210308091757515](images/image-20210308091757515.png)
+
+
+
