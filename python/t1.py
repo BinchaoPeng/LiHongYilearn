@@ -1,7 +1,8 @@
 import torch
-import torch.
+from torch.utils.data import Dataset, DataLoader
 import csv
 import numpy as np
+
 
 class COVID19Dataset(Dataset):
     ''' Dataset for loading and preprocessing the COVID19 dataset '''
@@ -21,7 +22,7 @@ class COVID19Dataset(Dataset):
             feats = list(range(93))
         else:
             # TODO: Using 40 states & 2 tested_positive features (indices = 57 & 75)
-            pass
+            feats = list(range(40)).append(57).append(75)
 
         if mode == 'test':
             # Testing data
@@ -42,7 +43,7 @@ class COVID19Dataset(Dataset):
 
             # Convert data into PyTorch tensors
             self.data = torch.FloatTensor(data[indices])
-            self.target = torch.FloatTensor(target[indices])
+            self.target = torch.FloatTensor([indices])
 
         # Normalize features (you may remove this part to see what will happen)
         self.data[:, 40:] = \
@@ -69,3 +70,4 @@ class COVID19Dataset(Dataset):
 
 
 if __name__ == '__main__':
+    data = COVID19Dataset()

@@ -12,6 +12,8 @@
 
 [github](https://github.com/ga642381/ML2021-Spring)
 
+[2020-李宏毅机器学习](https://www.bilibili.com/video/BV1JE411g7XF)
+
 ## note
 
 上课时间：2：20p.m. - 6:20 p.m., Friday
